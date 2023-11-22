@@ -32,7 +32,7 @@ id="layout-navbar"
     data-icon="octicon-star"
     data-size="large"
     data-show-count="true"
-    >{{auth('admin')->user()->name}}</a
+{{--    >{{auth('admin')->user()->name}}</a--}}
     >
 </li>
 
@@ -53,7 +53,7 @@ id="layout-navbar"
             </div>
             </div>
             <div class="flex-grow-1">
-            <span class="fw-semibold d-block">{{auth('admin')->user()->name}}</span>
+{{--            <span class="fw-semibold d-block">{{auth('admin')->user()->name}}</span>--}}
             <small class="text-muted">Admin</small>
             </div>
         </div>

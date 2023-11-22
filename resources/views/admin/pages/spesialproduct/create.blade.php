@@ -1,18 +1,18 @@
 @extends('admin.layouts.app')
 @section('content')
 <div class="container-xxl flex-grow-1 container-p-y">
-    <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">detail/</span> Create</h4>
+    <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light"> Special Products/</span> Create</h4>
 
     <!-- Basic Layout -->
     <div class="row">
         <div class="col-xl">
             <div class="card mb-4">
             <div class="card-header d-flex justify-content-between align-items-center">
-                <h5 class="mb-0">Add detail</h5>
+                <h5 class="mb-0">Add Special Products</h5>
                 {{-- <small class="text-muted float-end">Default label</small> --}}
             </div>
             <div class="card-body">
-                <form method="POST" action="{{route('details.store')}}" enctype="multipart/form-data">
+                <form method="POST" action="{{route('spicial_pro.store')}}" enctype="multipart/form-data">
                     @csrf
                     @if($errors->any())
                         @foreach($errors->all() as $error)
@@ -33,29 +33,18 @@
                         </div>
                     @endif
                     <div class="mb-3">
-                        <label class="form-label" for="title">Title</label>
-                        <input type="text" class="form-control" id="title" placeholder="Title with arabic"
-                               name="title" required />
+                        <label class="form-label" for="Name">Name</label>
+                        <input type="text" class="form-control" id="Name" placeholder="Name" name="name" required/>
                     </div>
+                <div class="mb-3">
+                    <label class="form-label" for="title">Image </label>
+                    <input type="file" class="form-control" name="image">
+                </div>
                     <div class="mb-3">
-                        <label class="form-label" for="title">description</label>
-                        <textarea class="form-control" name="value" placeholder="description" required rows="7">
-
-                        </textarea>
-{{--                        <input type="text" class="form-control" id="value" placeholder="Value"--}}
-{{--                               name="value" required />--}}
+                        <label class="form-label" for="Desc">Desc</label>
+                        <input type="text" class="form-control" id="Desc" placeholder="Desc" name="desc" required/>
                     </div>
-                    <div class="mb-3">
-                        <label for="product_id" class="form-label">Product</label>
-                        <select class="form-select" name="product_id" id="product_id"
-                                aria-label="Default select example" required>
-                            <option value="0" selected disabled>select product</option>
-                            @foreach ($products as $product)
-                                <option value="{{ $product->id }}">{{ $product->title }}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                <button type="submit" class="btn btn-primary">Add</button>
+                    <button type="submit" class="btn btn-primary">Add</button>
                 </form>
             </div>
             </div>

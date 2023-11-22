@@ -81,18 +81,12 @@
         <span class="menu-header-text">App Data</span>
     </li>
     <li class="menu-item">
-        <a href="javascript:void(0)" class="menu-link menu-toggle">
-            <i class="menu-icon tf-icons bx bx-purchase-tag-alt"></i>
-            <div data-i18n="User interface">sliders</div>
-        </a>
-        <ul class="menu-sub">
-            <li class="menu-item">
+            <li class="menu-item {{(strpos(Route::currentRouteName(), "Sliders") !== false) ? 'active' : '' }}">
                 <a href="{{route('sliders.index')}}" class="menu-link">
-                    <div data-i18n="Categories">sliders</div>
+                    <i class="menu-icon tf-icons bx bx-store"></i>
+                    <div data-i18n="Account Settings">Slider</div>
                 </a>
             </li>
-
-        </ul>
     </li>
     <li class="menu-item {{(strpos(Route::currentRouteName(), "categories") !== false) ? 'active open' : '' }}">
         <a href="javascript:void(0)" class="menu-link menu-toggle">
@@ -128,12 +122,29 @@
                     <div data-i18n="Accordion">Details</div>
                 </a>
             </li>
+            <li class="menu-item {{(strpos(Route::currentRouteName(), "Spesial product") !== false) ? 'active' : '' }}">
+                <a href="{{route('spicial_pro.index')}}" class="menu-link">
+                    <div data-i18n="Accordion">Spesial Product</div>
+                </a>
+            </li>
         </ul>
+    </li>
+    <li class="menu-item {{(strpos(Route::currentRouteName(), "Blogs") !== false) ? 'active' : '' }}">
+        <a href="{{route('blogs.index')}}" class="menu-link">
+            <i class="menu-icon tf-icons bx bx-notepad"></i>
+            <div data-i18n="Account Settings">Blogs</div>
+        </a>
     </li>
     <li class="menu-item {{(strpos(Route::currentRouteName(), "shops") !== false) ? 'active' : '' }}">
         <a href="{{route('admin.shops.index')}}" class="menu-link">
             <i class="menu-icon tf-icons bx bx-store"></i>
             <div data-i18n="Account Settings">Shops</div>
+        </a>
+    </li>
+    <li class="menu-item {{(strpos(Route::currentRouteName(), "About us") !== false) ? 'active' : '' }}">
+        <a href="{{route('aboutus.index')}}" class="menu-link">
+            <i class="menu-icon tf-icons bx bx-store"></i>
+            <div data-i18n="Account Settings">About us</div>
         </a>
     </li>
     <li class="menu-item {{(strpos(Route::currentRouteName(), "orders") !== false) ? 'active' : '' }}">
