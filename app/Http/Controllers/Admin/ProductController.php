@@ -91,4 +91,17 @@ class ProductController extends Controller
         $image->delete();
         return redirect()->back()->with('message', 'Successfully!');
     }
+
+    public function search()
+    {
+        $query = request()->input('query');
+        $products = Product::where(function ($queryBuilder) use ($query) {
+            $queryBuilder->where(function ($queryBuilder) use ($query) {
+                $queryBuilder->where('title', 'like', '%' . $query . '%')
+                    ->orWhere('desc', 'like', '%' . $query . '%')
+                    ->orWhere('price', 'like', '%' . $query . '%');
+            });
+        })->get();
+        return response($products);
+    }
 }

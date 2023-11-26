@@ -178,7 +178,7 @@
                                                     <div class="product_desc_info">
                                                         <div class="product-review">
                                                             <h5 class="manufacturer">
-                                                                <a href="#">{{$product->seller->shop->name}}</a>
+{{--                                                                <a href="#">{{$product->seller->shop->name}}</a>--}}
                                                             </h5>
                                                             <div class="rating-box">
                                                                 <ul class="rating">

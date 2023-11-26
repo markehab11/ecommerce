@@ -122,9 +122,14 @@
                     <div data-i18n="Accordion">Details</div>
                 </a>
             </li>
+            <li class="menu-item {{(strpos(Route::currentRouteName(), "Reviews product") !== false) ? 'active' : '' }}">
+                <a href="{{route('reviews.index')}}" class="menu-link">
+                    <div data-i18n="Accordion">Reviews</div>
+                </a>
+            </li>
             <li class="menu-item {{(strpos(Route::currentRouteName(), "Spesial product") !== false) ? 'active' : '' }}">
                 <a href="{{route('spicial_pro.index')}}" class="menu-link">
-                    <div data-i18n="Accordion">Spesial Product</div>
+                    <div data-i18n="Accordion">Spesial Products</div>
                 </a>
             </li>
         </ul>
@@ -135,16 +140,28 @@
             <div data-i18n="Account Settings">Blogs</div>
         </a>
     </li>
-    <li class="menu-item {{(strpos(Route::currentRouteName(), "shops") !== false) ? 'active' : '' }}">
-        <a href="{{route('admin.shops.index')}}" class="menu-link">
-            <i class="menu-icon tf-icons bx bx-store"></i>
-            <div data-i18n="Account Settings">Shops</div>
+    <li class="menu-item {{(strpos(Route::currentRouteName(), "asks") !== false) ? 'active' : '' }}">
+        <a href="{{route('asks.index')}}" class="menu-link">
+            <i class="menu-icon tf-icons bx bx-notepad"></i>
+            <div data-i18n="Account Settings">Asks</div>
+        </a>
+    </li>
+    <li class="menu-item {{(strpos(Route::currentRouteName(), "Questions") !== false) ? 'active' : '' }}">
+        <a href="{{route('questions.index')}}" class="menu-link">
+            <i class="menu-icon tf-icons bx bx-notepad"></i>
+            <div data-i18n="Account Settings">Questions</div>
         </a>
     </li>
     <li class="menu-item {{(strpos(Route::currentRouteName(), "About us") !== false) ? 'active' : '' }}">
         <a href="{{route('aboutus.index')}}" class="menu-link">
-            <i class="menu-icon tf-icons bx bx-store"></i>
+            <i class="menu-icon tf-icons bx bx-notepad"></i>
             <div data-i18n="Account Settings">About us</div>
+        </a>
+    </li>
+    <li class="menu-item {{(strpos(Route::currentRouteName(), "shops") !== false) ? 'active' : '' }}">
+        <a href="{{route('admin.shops.index')}}" class="menu-link">
+            <i class="menu-icon tf-icons bx bx-store"></i>
+            <div data-i18n="Account Settings">Shops</div>
         </a>
     </li>
     <li class="menu-item {{(strpos(Route::currentRouteName(), "orders") !== false) ? 'active' : '' }}">
@@ -250,12 +267,6 @@
             </a>
         </form>
     </li>
-
-
-
-
     </li>
-
-
 </ul>
 </aside>

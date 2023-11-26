@@ -43,4 +43,8 @@ class Product extends Model
     public function detail(){
         return $this->hasMany(Detail::class);
     }
+    public function reviews()
+    {
+        return $this->hasMany(ProductReview::class);
+    }
 }

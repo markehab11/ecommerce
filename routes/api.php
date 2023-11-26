@@ -1,9 +1,12 @@
 <?php
 
 use App\Http\Controllers\Api\AboutusController;
+use App\Http\Controllers\Api\AskController;
 use App\Http\Controllers\Api\BlogController;
 use App\Http\Controllers\Api\CategoryController;
 use App\Http\Controllers\Api\ProductController;
+use App\Http\Controllers\Api\QuestionController;
+use App\Http\Controllers\Api\ReviewController;
 use App\Http\Controllers\Api\SliderController;
 use App\Http\Controllers\Api\SpesialproductController;
 use App\Http\Controllers\Api\WishlistController;
@@ -60,6 +63,14 @@ Route::get('/blog/{id}', [BlogController::class, 'show']);
 Route::post('/blogs', [BlogController::class, 'store']);
 Route::post('/blog/{id}', [BlogController::class, 'update']);
 Route::post('/blogs/{id}', [BlogController::class, 'destroy']);
+
+Route::get('/questions', [QuestionController::class, 'index']);
+
+Route::get('/reviews', [ReviewController::class, 'index']);
+Route::get('/review', [ReviewController::class, 'show']);
+Route::post('/reviews', [ReviewController::class, 'store']);
+
+Route::post('/asks', [AskController::class, 'store']);
 
 
 
