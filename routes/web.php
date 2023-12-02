@@ -1,8 +1,11 @@
 <?php
 
 use App\Http\Controllers\Admin\AboutusController;
+use App\Http\Controllers\Admin\AskController;
 use App\Http\Controllers\Admin\blogController;
 use App\Http\Controllers\Admin\DetailController;
+use App\Http\Controllers\Admin\ProductReviewController;
+use App\Http\Controllers\Admin\QuestionController;
 use App\Http\Controllers\Admin\SpesialproductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Admin\SliderController;
@@ -36,11 +39,15 @@ Route::resource('details', DetailController::class);
 Route::resource('spicial_pro', SpesialproductController::class);
 Route::resource('aboutus', AboutusController::class);
 Route::resource('blogs', blogController::class);
-
+Route::resource('reviews', ProductReviewController::class);
+Route::resource('asks', AskController::class);
+Route::resource('questions', QuestionController::class);
 
 
 Route::prefix('products')->name('product.')->group(function () {
     Route::get('/{product}',[ProductController::class,'show'])->name('show');
+    Route::get('/{product}',[ProductController::class,'search'])->name('search');
+
 });
 Route::prefix('categories')->name('category.')->group(function () {
     Route::get('/{category}',[CategoryController::class,'show'])->name('show');
