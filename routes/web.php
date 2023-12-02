@@ -28,7 +28,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('user.index');
+    return view('user.stop');
 });
 
 Route::resource('sliders', SliderController::class);
